@@ -76,7 +76,7 @@ print(species.groupby('conservation_status').scientific_name.nunique())
 # to sort by.
 protection_counts = (species.groupby('conservation_status')
                             .scientific_name
-                            .count()
+                            .nunique()
                             .reset_index()
                             .sort_values(by='scientific_name'))
 print(protection_counts)
